@@ -1,0 +1,12 @@
+{
+  "details": "Created 0 message(s)",
+  "messages": [
+    {
+      "to": "0031612345678",
+      "status": "Rejected",
+      "reference": null,
+      "parts": 0,
+      "messageDetails": "A body without content was found"
+    }
+  ]
+}

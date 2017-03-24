@@ -1,0 +1,37 @@
+{
+  "name": "cmtelecom/messaging-php",
+  "description": "PHP client for integration with the CM platform",
+  "keywords": [
+    "cmtelecom", "cm", "telecom", "sms", "api", "sdk", "library", "package"
+  ],
+  "homepage": "https://www.cmtelecom.com",
+  "license": "Apache 2.0",
+  "type": "library",
+  "authors": [
+    {
+      "name": "Pallieter Verhoeven",
+      "email": "pallieter.verhoeven@cmtelecom.com"
+    },
+    {
+      "name": "Thomas Farla",
+      "email": "thomas.farla@cmtelecom.com"
+    }
+  ],
+  "require": {
+    "php": ">=5.4.0",
+    "myclabs/php-enum": "^1.5",
+    "php-http/httplug": "^1.1",
+    "guzzlehttp/psr7": "^1.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^5.7",
+    "php-http/mock-client": "^0.3",
+    "fzaninotto/faker": "^1.6"
+  },
+  "autoload": {
+    "psr-4": {
+      "CM\\Messaging\\": "src/CM/Messaging//",
+      "Test\\CM\\Messaging\\": "tests/CM/Messaging//"
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "details": "Created 2 message(s)",
+  "messages": [
+    {
+      "to": "0031612345678",
+      "status": "Accepted",
+      "reference": null,
+      "parts": 1,
+      "messageDetails": null
+    },
+    {
+      "to": "0031623456789",
+      "status": "Accepted",
+      "reference": null,
+      "parts": 1,
+      "messageDetails": null
+    },
+    {
+      "to": "0031634567890",
+      "status": "Rejected",
+      "reference": null,
+      "parts": 0,
+      "messageDetails": "A body without content was found"
+    }
+  ]
+}
