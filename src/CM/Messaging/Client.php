@@ -96,6 +96,13 @@ class Client
     private $apiHttpClient;
 
     /**
+     * Api endpoint. You don't wan't to alter this value.
+     *
+     * @var string
+     */
+    private $endpoint = 'https://gw.cmtelecom.com/v1.0/message';
+
+    /**
      * Client constructor.
      *
      * @param string          $productToken
@@ -135,7 +142,7 @@ class Client
 
         $body = $this->buildRequest((array)$messages, $parameters);
 
-        return $this->apiHttpClient->postRequest($body);
+        return $this->apiHttpClient->postRequest($this->endpoint, $body);
     }
 
     /**
@@ -313,8 +320,27 @@ class Client
     /**
      * @return string
      */
+    public function getEndpoint()
+    {
+        return $this->endpoint;
+    }
+
+    /**
+     * @return $this
+     */
+    public function setEndpoint($endpoint)
+    {
+        $this->endpoint = $endpoint;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
     public function getProductToken()
     {
         return $this->productToken;
     }
+
 }

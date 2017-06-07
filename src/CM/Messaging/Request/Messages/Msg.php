@@ -181,22 +181,20 @@ class Msg extends RequestSerializer
     /**
      * Set allowed channels field to force a message to only use certain routes.
      *
-     * @param $allowedChannels
+     * @param array $allowedChannels
      *
      * @return $this
      * @throws InvalidAllowedChannelException
      */
     public function setAllowedChannels($allowedChannels)
     {
-        if ($allowedChannels) {
-            /** @var array $allowedChannels */
-            foreach ($allowedChannels as $allowedChannel) {
-                if (!AllowedChannel::isValid($allowedChannel)) {
-                    throw new InvalidAllowedChannelException();
-                }
+        /** @var array $allowedChannels */
+        foreach ($allowedChannels as $allowedChannel) {
+            if (!AllowedChannel::isValid($allowedChannel)) {
+                throw new InvalidAllowedChannelException();
             }
 
-            $this->allowedChannels = [$allowedChannels];
+            $this->allowedChannels = (array)$allowedChannels;
         }
 
         return $this;

@@ -57,14 +57,16 @@ class ApiHttpClient
     }
 
     /**
-     * @param $body
+     * @param string $endpoint
+     * @param string $body
      *
      * @return Response
+     * @throws BadRequestException
      */
-    public function postRequest($body)
+    public function postRequest($endpoint, $body)
     {
         try {
-            $request  = new Request('POST', Config::ENDPOINT, $this->header, json_encode($body));
+            $request  = new Request('POST', $endpoint, $this->header, json_encode($body));
             $response = $this->httpClient->sendRequest($request);
 
             return new Response($response);

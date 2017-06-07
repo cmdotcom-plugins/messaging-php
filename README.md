@@ -35,10 +35,14 @@ try {
  
  ## Installation
  Run the following command in the root of your project to add the CM Messaging SDK to your project dependencies:
-`composer require cmtelecom/php-messaging-sdk`
+ 
+`composer require cmtelecom/messaging-php`
+
 And
-`composer require guzzlehttp/guzzle`
-*When using an alternative HttpClient you don't have to add the Guzzle dependencie but it is recomended to use Guzzle. For advanced usage you can look at [http://docs.php-http.org/en/latest/clients.html](http://docs.php-http.org/en/latest/clients.html) for other http clients.
+
+`composer require php-http/guzzle6-adapter`
+
+*When using an alternative HttpClient you don't have to add the Guzzle adapter dependency but it is recommended to use Guzzle. For advanced usage and other http clients you can look at [http://docs.php-http.org/en/latest/clients.html](http://docs.php-http.org/en/latest/clients.html).
   
  ## Usage
  Instantiate client with your `product token`, which can be found on the Gateway app when you login to [https://gateway.cmtelecom.com](https://gateway.cmtelecom.com).
