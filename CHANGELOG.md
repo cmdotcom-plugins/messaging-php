@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Added
 - travis config
+- travis and packagist badges
 
 ### Changed
 - phpunit version to php ^4.0 to support php 5.4

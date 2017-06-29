@@ -1,8 +1,14 @@
 # CM Messaging SDK
+[![Packagist](https://img.shields.io/packagist/dm/CMTelecom/messaging-php.svg)](https://packagist.org/packages/cmtelecom/messaging-php)
+[![Packagist](https://img.shields.io/packagist/v/CMTelecom/messaging-php.svg)](https://packagist.org/packages/cmtelecom/messaging-php)
+[![Travis](https://img.shields.io/travis/CMTelecom/messaging-php.svg)](https://travis-ci.org/CMTelecom/messaging-php)
+
 PHP SDK for easy use of CM messaging services. Built with an easy syntax your SMS, Push and/or Voice messages and send them directly with the CM services.
  
  ## Simple example
 ```php
+require('vendor/autoload.php');
+
 use GuzzleHttp\Client as GuzzleClient;
 use Http\Adapter\Guzzle6\Client as GuzzleAdapter;
 
