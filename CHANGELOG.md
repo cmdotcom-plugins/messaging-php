@@ -8,6 +8,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Fixed
 - tests
 
+### Added
+- travis config
+
 ## [1.0.1] - 2017-06-29
 ### Fixed
 - sending of single message
