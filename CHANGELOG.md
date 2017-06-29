@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 ### Fixed
+- tests
+
+## [1.0.1] - 2017-06-29
+### Fixed
 - sending of single message
 - default allowed channel being empty
 
@@ -20,5 +24,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - initial code
 
-[Unreleased]: https://github.com/CMTelecom/messaging-php/compare/0.0.1....HEAD
+[Unreleased]: https://github.com/CMTelecom/messaging-php/compare/1.0.1....HEAD
+[1.0.0]: https://github.com/CMTelecom/messaging-php/compare/1.0.0...1.0.1
+[1.0.0]: https://github.com/CMTelecom/messaging-php/compare/0.0.1...1.0.0
 [0.0.1]: https://github.com/CMTelecom/messaging-php/compare/0.0.1...0.0.1

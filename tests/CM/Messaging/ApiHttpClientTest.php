@@ -47,7 +47,7 @@ class ApiHttpClientTest extends TestCase
         $this->client->addResponse($response);
 
         $client = new ApiHttpClient($this->client);
-        $result = $client->postRequest($this->getMockMessage(1));
+        $result = $client->postRequest('', $this->getMockMessage(1));
 
         $this->assertInstanceOf('CM\Messaging\Response\Response', $result);
         $this->assertEquals(200, $result->getResponse()->getStatusCode());
@@ -66,7 +66,7 @@ class ApiHttpClientTest extends TestCase
         $this->client->addException($responseException);
 
         $client = new ApiHttpClient($this->client);
-        $client->postRequest($this->getMockMessage(1, false));
+        $client->postRequest('', $this->getMockMessage(1, false));
     }
 
     /**
@@ -81,7 +81,7 @@ class ApiHttpClientTest extends TestCase
         $this->client->addException($responseException);
 
         $client = new ApiHttpClient($this->client);
-        $client->postRequest($this->getMockMessage(1));
+        $client->postRequest('', $this->getMockMessage(1));
     }
 
     /**
@@ -93,7 +93,7 @@ class ApiHttpClientTest extends TestCase
         $this->client->addException($responseException);
 
         $client = new ApiHttpClient($this->client);
-        $client->postRequest($this->getMockMessage(1));
+        $client->postRequest('', $this->getMockMessage(1));
     }
 
     public function postRequestResponseProvider()
