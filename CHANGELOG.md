@@ -11,6 +11,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - travis config
 
+### Changed
+- phpunit version to php ^4.0 to support php 5.4
+
+### Removed
+- guzzle dependency from composer.lock
+
 ## [1.0.1] - 2017-06-29
 ### Fixed
 - sending of single message
