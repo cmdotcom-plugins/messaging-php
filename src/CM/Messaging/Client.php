@@ -79,7 +79,7 @@ class Client
      *
      * @var array[AllowedChannel]
      */
-    private $allowedChannels;
+    private $allowedChannels = [AllowedChannel::SMS];
 
     /**
      * Product token to authorize with.
@@ -131,6 +131,8 @@ class Client
      */
     public function send($messages, array $parameters = [])
     {
+        $messages = is_array($messages) ? $messages : [$messages];
+
         if (isset($parameters['strategy']) && $strategies = $parameters['strategy']) {
             /** @var array $strategies */
             foreach ($strategies as $strategy) {
