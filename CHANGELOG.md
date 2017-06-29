@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Changed
 - phpunit version to php ^4.0 to support php 5.4
+- minimum php version support to 5.5
 
 ### Removed
 - guzzle dependency from composer.lock

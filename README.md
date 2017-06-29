@@ -37,7 +37,7 @@ try {
  ## Requirements
  - CM account with credits, you can register here [https://register.cmtelecom.com](https://register.cmtelecom.com).
  - Composer installed, or load manually
- - PHP >= 5.4
+ - PHP >= 5.5
  
  ## Installation
  Run the following command in the root of your project to add the CM Messaging SDK to your project dependencies:
