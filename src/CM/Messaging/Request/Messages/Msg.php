@@ -54,6 +54,30 @@ class Msg extends RequestSerializer
     protected $reference;
 
     /**
+     * Applying custom grouping names to messages helps filter your messages. With up to three levels of custom grouping fields that can be set, subsets of messages can be further broken down.
+     * The custom grouping name can be up to 100 characters of your choosing. It’s recommended to limit the number of unique custom groupings to 1000.
+     *
+     * @var string
+     */
+    protected $customGrouping;
+
+    /**
+     * Applying custom grouping names to messages helps filter your messages. With up to three levels of custom grouping fields that can be set, subsets of messages can be further broken down.
+     * The custom grouping name can be up to 100 characters of your choosing. It’s recommended to limit the number of unique custom groupings to 1000.
+     *
+     * @var string
+     */
+    protected $customGrouping2;
+
+    /**
+     * Applying custom grouping names to messages helps filter your messages. With up to three levels of custom grouping fields that can be set, subsets of messages can be further broken down.
+     * The custom grouping name can be up to 100 characters of your choosing. It’s recommended to limit the number of unique custom groupings to 1000.
+     *
+     * @var string
+     */
+    protected $customGrouping3;
+
+    /**
      * Used when sending multipart or concatenated SMS messages and always used together. Indicate the minimum and maximum of message parts that you allow the gateway to send for this message.
      * Technically the gateway will first check if a message is larger than 160 characters, if so, the message will be cut into multiple 153 characters parts limited by these parameters.
      *
@@ -229,6 +253,48 @@ class Msg extends RequestSerializer
     }
 
     /**
+     * Set your message custom grouping.
+     *
+     * @param $customGrouping1
+     *
+     * @return $this
+     */
+    public function setCustomGrouping1($customGrouping1)
+    {
+        $this->customGrouping = $customGrouping1;
+
+        return $this;
+    }
+
+    /**
+     * Set your message reference.
+     *
+     * @param $customGrouping2
+     *
+     * @return $this
+     */
+    public function setCustomGrouping2($customGrouping2)
+    {
+        $this->customGrouping2 = $customGrouping2;
+
+        return $this;
+    }
+
+    /**
+     * Set your message reference.
+     *
+     * @param $customGrouping3
+     *
+     * @return $this
+     */
+    public function setCustomGrouping3($customGrouping3)
+    {
+        $this->customGrouping3 = $customGrouping3;
+
+        return $this;
+    }
+
+    /**
      * Get sender name.
      *
      * @return string
@@ -316,6 +382,36 @@ class Msg extends RequestSerializer
     public function getReference()
     {
         return $this->reference;
+    }
+
+    /**
+     * Get your message custom grouping.
+     *
+     * @return string
+     */
+    public function getCustomGrouping1()
+    {
+        return $this->customGrouping1;
+    }
+
+    /**
+     * Get your message custom grouping.
+     *
+     * @return string
+     */
+    public function getCustomGrouping2()
+    {
+        return $this->customGrouping2;
+    }
+
+    /**
+     * Get your message custom grouping.
+     *
+     * @return string
+     */
+    public function getCustomGrouping3()
+    {
+        return $this->customGrouping3;
     }
 
     /**

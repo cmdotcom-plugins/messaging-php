@@ -2,7 +2,14 @@
   "name": "cmtelecom/messaging-php",
   "description": "PHP client for integration with the CM platform",
   "keywords": [
-    "cmtelecom", "cm", "telecom", "sms", "api", "sdk", "library", "package"
+    "cmtelecom",
+    "cm",
+    "telecom",
+    "sms",
+    "api",
+    "sdk",
+    "library",
+    "package"
   ],
   "homepage": "https://www.cmtelecom.com",
   "license": "Apache 2.0",
@@ -19,19 +26,22 @@
   ],
   "require": {
     "php": ">=5.4.0",
-    "myclabs/php-enum": "^1.5",
-    "php-http/httplug": "^1.1",
-    "guzzlehttp/psr7": "^1.0"
+    "myclabs/php-enum": "1.5.*",
+    "php-http/httplug": "1.1.*",
+    "guzzlehttp/psr7": "1.4.*"
   },
   "require-dev": {
-    "php-http/mock-client": "^0.3",
-    "fzaninotto/faker": "^1.6",
-    "phpunit/phpunit": "^4.0"
+    "php-http/mock-client": "0.3.*",
+    "fzaninotto/faker": "1.6.*",
+    "phpunit/phpunit": "4.0.*"
   },
   "autoload": {
     "psr-4": {
       "CM\\Messaging\\": "src/CM/Messaging//",
       "Test\\CM\\Messaging\\": "tests/CM/Messaging//"
     }
+  },
+  "suggest": {
+    "php-http/guzzle6-adapter": "This is the default and recommended http client adapter. A http client adapter is required!"
   }
 }
