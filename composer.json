@@ -33,7 +33,7 @@
   "require-dev": {
     "php-http/mock-client": "0.3.*",
     "fzaninotto/faker": "1.6.*",
-    "phpunit/phpunit": "4.0.*"
+    "phpunit/phpunit": "4.*"
   },
   "autoload": {
     "psr-4": {
