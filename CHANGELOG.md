@@ -5,6 +5,9 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+### Added
+- add custom grouping support 
+
 ## [1.0.2] - 2017-06-29
 ### Fixed
 - tests
