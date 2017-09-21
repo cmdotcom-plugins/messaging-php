@@ -63,7 +63,7 @@ use \CM\Messaging\Settings\AllowedChannel;
 
  $message = (new \CM\Messaging\Message())
         ->setFrom('Your name/company name')
-        ->setTo([['0031612345678', '0031623456789', '0031634567890'])
+        ->setTo(['0031612345678', '0031623456789', '0031634567890'])
         ->setBody('Message')
         ->setReference('Your message')
         ->setAllowedChannels([AllowedChannel::SMS, AllowedChannel::PUSH, AllowedChannel::VOICE])
@@ -207,6 +207,12 @@ Exception thrown | Description
 **setDcs()** | int $dcs | $this 
 **getReference()** |  | string 
 **setReference()** | string $reference | $this 
+**getCustomGrouping1()** |  | string 
+**setCustomGrouping1()** | string $reference | $this 
+**getCustomGrouping2()** |  | string 
+**setCustomGrouping2()** | string $reference | $this 
+**getCustomGrouping3()** |  | string 
+**setCustomGrouping3()** | string $reference | $this 
 **getMinimumNumberOfMessageParts()** |  | int 
 **setMinimumNumberOfMessageParts()** | int $minimumNumberOfMessageParts | $this 
 **getMaximumNumberOfMessageParts()** |  | int 
@@ -230,6 +236,12 @@ Exception thrown | Description
 **setDcs()** | int $dcs | $this 
 **getReference()** |  | string 
 **setReference()** | string $reference | $this 
+**getCustomGrouping1()** |  | string 
+**setCustomGrouping1()** | string $reference | $this 
+**getCustomGrouping2()** |  | string 
+**setCustomGrouping2()** | string $reference | $this 
+**getCustomGrouping3()** |  | string 
+**setCustomGrouping3()** | string $reference | $this 
 **getMinimumNumberOfMessageParts()** |  | int 
 **setMinimumNumberOfMessageParts()** | int $minimumNumberOfMessageParts | $this 
 **getMaximumNumberOfMessageParts()** |  | int 

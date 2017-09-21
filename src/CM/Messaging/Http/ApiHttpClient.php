@@ -58,9 +58,13 @@ class ApiHttpClient
 
     /**
      * @param string $endpoint
-     * @param string $body
+     * @param array  $body
      *
      * @return Response
+     * @throws \Http\Client\Exception\HttpException
+     * @throws \Http\Client\Exception
+     * @throws \Exception
+     * @throws \RuntimeException
      * @throws BadRequestException
      */
     public function postRequest($endpoint, $body)

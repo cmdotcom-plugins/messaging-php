@@ -58,6 +58,30 @@ class Message
     private $reference;
 
     /**
+     * Applying custom grouping names to messages helps filter your messages. With up to three levels of custom grouping fields that can be set, subsets of messages can be further broken down.
+     * The custom grouping name can be up to 100 characters of your choosing. It’s recommended to limit the number of unique custom groupings to 1000.
+     *
+     * @var string
+     */
+    protected $customGrouping1;
+
+    /**
+     * Applying custom grouping names to messages helps filter your messages. With up to three levels of custom grouping fields that can be set, subsets of messages can be further broken down.
+     * The custom grouping name can be up to 100 characters of your choosing. It’s recommended to limit the number of unique custom groupings to 1000.
+     *
+     * @var string
+     */
+    protected $customGrouping2;
+
+    /**
+     * Applying custom grouping names to messages helps filter your messages. With up to three levels of custom grouping fields that can be set, subsets of messages can be further broken down.
+     * The custom grouping name can be up to 100 characters of your choosing. It’s recommended to limit the number of unique custom groupings to 1000.
+     *
+     * @var string
+     */
+    protected $customGrouping3;
+
+    /**
      * Used when sending multipart or concatenated SMS messages and always used together. Indicate the minimum and maximum of message parts that you allow the gateway to send for this message.
      * Technically the gateway will first check if a message is larger than 160 characters, if so, the message will be cut into multiple 153 characters parts limited by these parameters.
      *
@@ -203,6 +227,72 @@ class Message
     public function setReference($reference)
     {
         $this->reference = $reference;
+
+        return $this;
+    }
+
+    /**
+     * Get your message custom grouping.
+     *
+     * @return string
+     */
+    public function getCustomGrouping1()
+    {
+        return $this->customGrouping1;
+    }
+
+    /**
+     * @param $customGrouping
+     *
+     * @return $this
+     */
+    public function setCustomGrouping1($customGrouping)
+    {
+        $this->customGrouping1 = $customGrouping;
+
+        return $this;
+    }
+
+    /**
+     * Get your message custom grouping.
+     *
+     * @return string
+     */
+    public function getCustomGrouping2()
+    {
+        return $this->customGrouping2;
+    }
+
+    /**
+     * @param $customGrouping
+     *
+     * @return $this
+     */
+    public function setCustomGrouping2($customGrouping)
+    {
+        $this->customGrouping2 = $customGrouping;
+
+        return $this;
+    }
+
+    /**
+     * Get your message custom grouping.
+     *
+     * @return string
+     */
+    public function getCustomGrouping3()
+    {
+        return $this->customGrouping3;
+    }
+
+    /**
+     * @param $customGrouping
+     *
+     * @return $this
+     */
+    public function setCustomGrouping3($customGrouping)
+    {
+        $this->customGrouping3 = $customGrouping;
 
         return $this;
     }
