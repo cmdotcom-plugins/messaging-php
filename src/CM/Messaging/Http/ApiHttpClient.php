@@ -61,6 +61,7 @@ class ApiHttpClient
      * @param array  $body
      *
      * @return Response
+     * @throws \Http\Client\Exception\HttpException
      * @throws \Http\Client\Exception
      * @throws \Exception
      * @throws \RuntimeException

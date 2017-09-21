@@ -423,6 +423,8 @@ class Client
     }
 
     /**
+     * @param $endpoint
+     *
      * @return $this
      */
     public function setEndpoint($endpoint)

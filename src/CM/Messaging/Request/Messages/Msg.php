@@ -391,7 +391,7 @@ class Msg extends RequestSerializer
      */
     public function getCustomGrouping1()
     {
-        return $this->customGrouping1;
+        return $this->customGrouping;
     }
 
     /**
