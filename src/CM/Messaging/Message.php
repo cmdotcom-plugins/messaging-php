@@ -63,7 +63,7 @@ class Message
      *
      * @var string
      */
-    protected $customGrouping1;
+    private $customGrouping1;
 
     /**
      * Applying custom grouping names to messages helps filter your messages. With up to three levels of custom grouping fields that can be set, subsets of messages can be further broken down.
@@ -71,7 +71,7 @@ class Message
      *
      * @var string
      */
-    protected $customGrouping2;
+    private $customGrouping2;
 
     /**
      * Applying custom grouping names to messages helps filter your messages. With up to three levels of custom grouping fields that can be set, subsets of messages can be further broken down.
@@ -79,7 +79,7 @@ class Message
      *
      * @var string
      */
-    protected $customGrouping3;
+    private $customGrouping3;
 
     /**
      * Used when sending multipart or concatenated SMS messages and always used together. Indicate the minimum and maximum of message parts that you allow the gateway to send for this message.
