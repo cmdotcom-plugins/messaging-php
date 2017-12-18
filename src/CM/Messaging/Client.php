@@ -3,8 +3,8 @@
 namespace CM\Messaging;
 
 use CM\Messaging\Exception\InvalidAllowedChannelException;
-use CM\Messaging\Exception\InvalidStrategyException;
 use CM\Messaging\Exception\InvalidConfigurationException;
+use CM\Messaging\Exception\InvalidStrategyException;
 use CM\Messaging\Http\ApiHttpClient;
 use CM\Messaging\Request\Messages;
 use CM\Messaging\Request\Messages\Msg;
@@ -27,37 +27,12 @@ class Client
 {
 
     /**
-     * It possible to let our gateway do the encoding detection for you. In case it detects characters that are not part of the GSM character set, the message will be delivered as Unicode.
-     * Any existing DCS value will be ignored. If the message contains more than 70 characters in Unicode format it will be split into a multipart message.
-     *
-     * @var BodyType
-     */
-    private $bodyType;
-
-    /**
-     * You use the DCS (data coding scheme) parameter to indicate the type of message you are sending. If you set DCS to '0' or do not include the parameter, the messages uses standard GSM encoding.
-     * If DCS is set to '8' the message will be encoded using Unicode UCS2.
-     *
-     * @var int
-     */
-    private $dcs;
-
-    /**
-     * Here you can include your message reference. This information will be returned in a status report so you can match the message and it's status. It should be included in the XML when posting.
-     * Restrictions: 1 - 32 alphanumeric characters and reference will not work for demo accounts.
-     *
-     * @var string
-     */
-    private $reference;
-
-    /**
      * Applying custom grouping names to messages helps filter your messages. With up to three levels of custom grouping fields that can be set, subsets of messages can be further broken down.
      * The custom grouping name can be up to 100 characters of your choosing. It’s recommended to limit the number of unique custom groupings to 1000.
      *
      * @var string
      */
     protected $customGrouping1;
-
     /**
      * Applying custom grouping names to messages helps filter your messages. With up to three levels of custom grouping fields that can be set, subsets of messages can be further broken down.
      * The custom grouping name can be up to 100 characters of your choosing. It’s recommended to limit the number of unique custom groupings to 1000.
@@ -65,7 +40,6 @@ class Client
      * @var string
      */
     protected $customGrouping2;
-
     /**
      * Applying custom grouping names to messages helps filter your messages. With up to three levels of custom grouping fields that can be set, subsets of messages can be further broken down.
      * The custom grouping name can be up to 100 characters of your choosing. It’s recommended to limit the number of unique custom groupings to 1000.
@@ -73,7 +47,27 @@ class Client
      * @var string
      */
     protected $customGrouping3;
-
+    /**
+     * It possible to let our gateway do the encoding detection for you. In case it detects characters that are not part of the GSM character set, the message will be delivered as Unicode.
+     * Any existing DCS value will be ignored. If the message contains more than 70 characters in Unicode format it will be split into a multipart message.
+     *
+     * @var BodyType
+     */
+    private $bodyType;
+    /**
+     * You use the DCS (data coding scheme) parameter to indicate the type of message you are sending. If you set DCS to '0' or do not include the parameter, the messages uses standard GSM encoding.
+     * If DCS is set to '8' the message will be encoded using Unicode UCS2.
+     *
+     * @var int
+     */
+    private $dcs;
+    /**
+     * Here you can include your message reference. This information will be returned in a status report so you can match the message and it's status. It should be included in the XML when posting.
+     * Restrictions: 1 - 32 alphanumeric characters and reference will not work for demo accounts.
+     *
+     * @var string
+     */
+    private $reference;
     /**
      * Used when sending multipart or concatenated SMS messages and always used together. Indicate the minimum and maximum of message parts that you allow the gateway to send for this message.
      * Technically the gateway will first check if a message is larger than 160 characters, if so, the message will be cut into multiple 153 characters parts limited by these parameters.
@@ -103,7 +97,7 @@ class Client
      *
      * @var array[AllowedChannel]
      */
-    private $allowedChannels = [AllowedChannel::SMS];
+    private $allowedChannels;
 
     /**
      * Product token to authorize with.
@@ -145,6 +139,7 @@ class Client
      * @param array         $parameters
      *
      * @return Response\Response
+     * @throws \Http\Client\Exception\HttpException
      * @throws \CM\Messaging\Exception\BadRequestException
      * @throws \RuntimeException
      * @throws \Http\Client\Exception
@@ -217,7 +212,7 @@ class Client
     }
 
     /**
-     * @param BodyType $bodyType
+     * @param null|string|BodyType $bodyType
      *
      * @return $this
      */
@@ -403,7 +398,7 @@ class Client
     }
 
     /**
-     * @param array|AllowedChannel $allowedChannels
+     * @param array|string|AllowedChannel $allowedChannels
      *
      * @return $this
      */

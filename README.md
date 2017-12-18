@@ -128,23 +128,15 @@ try {
     
     // returns true if all messages are accepted
     $result->isAccepted() 
-    // returns true if messages with these phone numbers are accepted
-    $result->isAccepted(['0031612345678', '0031623456789'])
     
     // returns true if all messages are failed
     $result->isFailed()
-    // returns true if messages with these phone numbers are failed
-    $result->isFailed(['0031612345678', '0031623456789'])
     
     // returns an array with the accepted message responses
     $result->getAccepted() 
-    // returns an array with the accepted message responses containging these phone numbers
-    $result->getAccepted(['0031612345678', '0031623456789'])
     
     // returns an array with the failed message responses 
     $result->getFailed()
-    // returns an array with the failed message responses containging these phone numbers
-    $result->getFailed(['0031612345678', '0031623456789'])
     
 } catch (\CM\Messaging\Exception\BadRequestException $e) {
     // The request failed because of an invalid value, all messages has not been send

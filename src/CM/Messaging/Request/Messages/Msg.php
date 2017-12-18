@@ -108,6 +108,29 @@ class Msg extends RequestSerializer
      */
     protected $allowedChannels;
 
+    /**
+     * Set your message custom grouping.
+     *
+     * @param $customGrouping1
+     *
+     * @return $this
+     */
+    public function setCustomGrouping1($customGrouping1)
+    {
+        $this->customGrouping = $customGrouping1;
+
+        return $this;
+    }
+
+    /**
+     * Get sender name.
+     *
+     * @return string
+     */
+    public function getFrom()
+    {
+        return $this->from;
+    }
 
     /**
      * Set sender name.
@@ -121,6 +144,16 @@ class Msg extends RequestSerializer
         $this->from = $from;
 
         return $this;
+    }
+
+    /**
+     * Get the destination phone number(s).
+     *
+     * @return array
+     */
+    public function getTo()
+    {
+        return $this->to;
     }
 
     /**
@@ -139,11 +172,23 @@ class Msg extends RequestSerializer
 
         $numbers = [];
         foreach ($toArray as $number) {
-            $numbers[] = new Number($number);
+            if (!empty($number)) {
+                $numbers[] = new Number($number);
+            }
         }
         $this->to = $numbers;
 
         return $this;
+    }
+
+    /**
+     * Get the DCS (data coding scheme).
+     *
+     * @return int
+     */
+    public function getDcs()
+    {
+        return $this->dcs;
     }
 
     /**
@@ -161,6 +206,16 @@ class Msg extends RequestSerializer
     }
 
     /**
+     * Get the minimum message parts.
+     *
+     * @return int
+     */
+    public function getMinimumNumberOfMessageParts()
+    {
+        return $this->minimumNumberOfMessageParts;
+    }
+
+    /**
      * Set the minimum message parts
      *
      * @param $minimumNumberOfMessageParts
@@ -172,6 +227,16 @@ class Msg extends RequestSerializer
         $this->minimumNumberOfMessageParts = $minimumNumberOfMessageParts;
 
         return $this;
+    }
+
+    /**
+     * Get the maximum message parts.
+     *
+     * @return int
+     */
+    public function getMaximumNumberOfMessageParts()
+    {
+        return $this->maximumNumberOfMessageParts;
     }
 
     /**
@@ -189,6 +254,16 @@ class Msg extends RequestSerializer
     }
 
     /**
+     * Get appKey to use Hybrid Messaging.
+     *
+     * @return string
+     */
+    public function getAppKey()
+    {
+        return $this->appKey;
+    }
+
+    /**
      * Set appKey to use Hybrid Messaging.
      *
      * @param $appKey
@@ -203,25 +278,46 @@ class Msg extends RequestSerializer
     }
 
     /**
+     * Get allowed channels field to force a message to only use certain routes.
+     *
+     * @return array
+     */
+    public function getAllowedChannels()
+    {
+        return $this->allowedChannels;
+    }
+
+    /**
      * Set allowed channels field to force a message to only use certain routes.
      *
-     * @param array $allowedChannels
+     * @param null|array $allowedChannels
      *
      * @return $this
      * @throws InvalidAllowedChannelException
      */
     public function setAllowedChannels($allowedChannels)
     {
-        /** @var array $allowedChannels */
-        foreach ($allowedChannels as $allowedChannel) {
-            if (!AllowedChannel::isValid($allowedChannel)) {
-                throw new InvalidAllowedChannelException();
-            }
+        if (is_array($allowedChannels)) {
+            foreach ($allowedChannels as $allowedChannel) {
+                if (!AllowedChannel::isValid($allowedChannel)) {
+                    throw new InvalidAllowedChannelException();
+                }
 
-            $this->allowedChannels = (array)$allowedChannels;
+                $this->allowedChannels = (array)$allowedChannels;
+            }
         }
 
         return $this;
+    }
+
+    /**
+     * Get the message text.
+     *
+     * @return string
+     */
+    public function getBody()
+    {
+        return $this->body;
     }
 
     /**
@@ -239,6 +335,16 @@ class Msg extends RequestSerializer
     }
 
     /**
+     * Get your message reference.
+     *
+     * @return string
+     */
+    public function getReference()
+    {
+        return $this->reference;
+    }
+
+    /**
      * Set your message reference.
      *
      * @return $this
@@ -250,138 +356,6 @@ class Msg extends RequestSerializer
         $this->reference = $reference;
 
         return $this;
-    }
-
-    /**
-     * Set your message custom grouping.
-     *
-     * @param $customGrouping1
-     *
-     * @return $this
-     */
-    public function setCustomGrouping1($customGrouping1)
-    {
-        $this->customGrouping = $customGrouping1;
-
-        return $this;
-    }
-
-    /**
-     * Set your message reference.
-     *
-     * @param $customGrouping2
-     *
-     * @return $this
-     */
-    public function setCustomGrouping2($customGrouping2)
-    {
-        $this->customGrouping2 = $customGrouping2;
-
-        return $this;
-    }
-
-    /**
-     * Set your message reference.
-     *
-     * @param $customGrouping3
-     *
-     * @return $this
-     */
-    public function setCustomGrouping3($customGrouping3)
-    {
-        $this->customGrouping3 = $customGrouping3;
-
-        return $this;
-    }
-
-    /**
-     * Get sender name.
-     *
-     * @return string
-     */
-    public function getFrom()
-    {
-        return $this->from;
-    }
-
-    /**
-     * Get the destination phone number(s).
-     *
-     * @return array
-     */
-    public function getTo()
-    {
-        return $this->to;
-    }
-
-    /**
-     * Get the DCS (data coding scheme).
-     *
-     * @return int
-     */
-    public function getDcs()
-    {
-        return $this->dcs;
-    }
-
-    /**
-     * Get the minimum message parts.
-     *
-     * @return int
-     */
-    public function getMinimumNumberOfMessageParts()
-    {
-        return $this->minimumNumberOfMessageParts;
-    }
-
-    /**
-     * Get the maximum message parts.
-     *
-     * @return int
-     */
-    public function getMaximumNumberOfMessageParts()
-    {
-        return $this->maximumNumberOfMessageParts;
-    }
-
-    /**
-     * Get appKey to use Hybrid Messaging.
-     *
-     * @return string
-     */
-    public function getAppKey()
-    {
-        return $this->appKey;
-    }
-
-    /**
-     * Get allowed channels field to force a message to only use certain routes.
-     *
-     * @return array
-     */
-    public function getAllowedChannels()
-    {
-        return $this->allowedChannels;
-    }
-
-    /**
-     * Get the message text.
-     *
-     * @return string
-     */
-    public function getBody()
-    {
-        return $this->body;
-    }
-
-    /**
-     * Get your message reference.
-     *
-     * @return string
-     */
-    public function getReference()
-    {
-        return $this->reference;
     }
 
     /**
@@ -405,6 +379,20 @@ class Msg extends RequestSerializer
     }
 
     /**
+     * Set your message reference.
+     *
+     * @param $customGrouping2
+     *
+     * @return $this
+     */
+    public function setCustomGrouping2($customGrouping2)
+    {
+        $this->customGrouping2 = $customGrouping2;
+
+        return $this;
+    }
+
+    /**
      * Get your message custom grouping.
      *
      * @return string
@@ -412,6 +400,20 @@ class Msg extends RequestSerializer
     public function getCustomGrouping3()
     {
         return $this->customGrouping3;
+    }
+
+    /**
+     * Set your message reference.
+     *
+     * @param $customGrouping3
+     *
+     * @return $this
+     */
+    public function setCustomGrouping3($customGrouping3)
+    {
+        $this->customGrouping3 = $customGrouping3;
+
+        return $this;
     }
 
     /**
