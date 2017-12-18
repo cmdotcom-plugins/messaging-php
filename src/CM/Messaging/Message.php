@@ -168,8 +168,8 @@ class Message
     }
 
     /**
-     * @param string        $body
-     * @param null|BodyType $type
+     * @param string               $body
+     * @param null|string|BodyType $type
      *
      * @return $this
      */
@@ -366,7 +366,7 @@ class Message
     }
 
     /**
-     * @param array|AllowedChannel $allowedChannels
+     * @param array|string|AllowedChannel $allowedChannels
      *
      * @return $this
      */

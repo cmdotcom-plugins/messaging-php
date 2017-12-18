@@ -11,11 +11,6 @@ abstract class RequestSerializer implements \JsonSerializable
 {
 
     /**
-     * @return $this
-     */
-    abstract protected function getClass();
-
-    /**
      * Specify data which should be serialized to JSON and filter all null values
      *
      * @link  http://php.net/manual/en/jsonserializable.jsonserialize.php
@@ -26,5 +21,10 @@ abstract class RequestSerializer implements \JsonSerializable
     {
         return array_filter(get_object_vars($this->getClass()));
     }
+
+    /**
+     * @return $this
+     */
+    abstract protected function getClass();
 
 }

@@ -2,7 +2,6 @@
 
 namespace Test\CM\Messaging;
 
-use CM\Messaging\Config;
 use CM\Messaging\Exception\BadRequestException;
 use CM\Messaging\Http\ApiHttpClient;
 use GuzzleHttp\Psr7\Request;
@@ -28,8 +27,6 @@ class ApiHttpClientTest extends TestCase
     {
         $expected   = [
             'Content-Type' => 'application/json',
-            'LANGUAGE'     => 'PHP',
-            'SDK_VERSION'  => Config::SDK_VERSION,
             'HTTP_CLIENT'  => 'Http\\Mock\\Client'
         ];
 

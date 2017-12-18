@@ -2,7 +2,6 @@
 
 namespace CM\Messaging\Http;
 
-use CM\Messaging\Config;
 use CM\Messaging\Exception\BadRequestException;
 use CM\Messaging\Response\Response;
 use GuzzleHttp\Psr7\Request;
@@ -50,8 +49,6 @@ class ApiHttpClient
     {
         return [
             'Content-Type' => 'application/json',
-            'LANGUAGE'     => Config::LANGUAGE,
-            'SDK_VERSION'  => Config::SDK_VERSION,
             'HTTP_CLIENT'  => get_class($this->httpClient)
         ];
     }

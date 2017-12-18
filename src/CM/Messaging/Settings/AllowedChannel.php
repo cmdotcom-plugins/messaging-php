@@ -14,12 +14,12 @@ class AllowedChannel extends Enum
     /**
      *  Allow to send message by SMS
      */
-    const SMS   = 'SMS';
+    const SMS = 'SMS';
 
     /**
      *  Allow to send message by Push
      */
-    const PUSH  = 'Push';
+    const PUSH = 'Push';
 
     /**
      *  Allow to send message by Voice

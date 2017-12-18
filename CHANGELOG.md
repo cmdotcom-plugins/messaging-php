@@ -5,6 +5,18 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+### Removed
+- removed default channel selection
+- removed obsolete test assertions 
+- removed config file
+
+### Fixed
+- fixed body type php doc accept string parameters
+
+### Updated
+- updated line formatting
+- updated imports
+
 ## [1.1.1] - 2017-10-30
 ### Changed
 - change custom grouping fields to private for constancy
@@ -45,7 +57,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - initial code
 
 [Unreleased]: https://github.com/CMTelecom/messaging-php/compare/1.1.1....HEAD
-[1.1.0]: https://github.com/CMTelecom/messaging-php/compare/1.1.0...1.1.1
+[1.1.1]: https://github.com/CMTelecom/messaging-php/compare/1.1.0...1.1.1
 [1.1.0]: https://github.com/CMTelecom/messaging-php/compare/1.0.2...1.1.0
 [1.0.2]: https://github.com/CMTelecom/messaging-php/compare/1.0.1...1.0.2
 [1.0.1]: https://github.com/CMTelecom/messaging-php/compare/1.0.0...1.0.1
