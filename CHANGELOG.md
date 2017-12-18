@@ -14,7 +14,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - fixed body type php doc accept string parameters
 
 ### Updated
-- updated composer dependencies
 - updated line formatting
 - updated imports
 
