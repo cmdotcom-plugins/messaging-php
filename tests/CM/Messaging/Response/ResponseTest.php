@@ -31,7 +31,7 @@ class ResponseTest extends TestCase
         $this->assertTrue($result->isAccepted());
         $this->assertCount(1, $result->getAccepted());
 
-        $this->assertNull($result->getFailed());
+        $this->assertCount(0, $result->getFailed());
     }
 
     public function testAllAcceptedMultiple()
@@ -45,7 +45,7 @@ class ResponseTest extends TestCase
         $this->assertTrue($result->isAccepted());
         $this->assertCount(3, $result->getAccepted());
 
-        $this->assertNull($result->getFailed());
+        $this->assertCount(0, $result->getFailed());
     }
 
     public function testAllSomeAcceptedMultiple()
