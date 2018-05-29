@@ -30,14 +30,14 @@ class Response
      *
      * @var array
      */
-    private $accepted;
+    private $accepted = array();
 
     /**
      * Messaging(s) rejected by te server
      *
      * @var array
      */
-    private $failed;
+    private $failed = array();
 
     /**
      * Response constructor.
