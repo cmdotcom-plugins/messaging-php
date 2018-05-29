@@ -64,7 +64,7 @@ class ClientTest extends TestCase
 
         $this->assertInstanceOf('\CM\Messaging\Response\Response', $result);
         $this->assertCount(1, $result->getAccepted());
-        $this->assertNull($result->getFailed());
+        $this->assertCount(0, $result->getFailed());
     }
 
     public function testSendBuildRequest()
