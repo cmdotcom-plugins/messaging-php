@@ -5,6 +5,10 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+## [1.3.0] - 2018-05-29
+### Fixed
+- php 7.2 compatibility
+
 ## [1.2.0] - 2017-12-18
 ### Removed
 - removed default channel selection
