@@ -3,6 +3,8 @@
 [![Packagist](https://img.shields.io/packagist/v/CMTelecom/messaging-php.svg)](https://packagist.org/packages/cmtelecom/messaging-php)
 [![Travis](https://img.shields.io/travis/CMTelecom/messaging-php.svg)](https://travis-ci.org/CMTelecom/messaging-php)
 
+**Note**: This project is not maintained anymore. Please use https://github.com/cmdotcom/text-sdk-php instead. 
+
 PHP SDK for easy use of CM messaging services. Built with an easy syntax your SMS, Push and/or Voice messages and send them directly with the CM services.
  
  ## Simple example
