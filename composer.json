@@ -1,6 +1,7 @@
 {
   "name": "cmtelecom/messaging-php",
   "description": "PHP client for integration with the CM platform",
+  "abandoned": "cmdotcom/text-sdk-php",
   "keywords": [
     "cmtelecom",
     "cm",
