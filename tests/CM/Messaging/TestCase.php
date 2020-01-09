@@ -6,14 +6,14 @@ use CM\Messaging\Message;
 use CM\Messaging\Settings\AllowedChannel;
 use Faker\Factory;
 
-class TestCase extends \PHPUnit_Framework_TestCase
+class TestCase extends \PHPUnit\Framework\TestCase
 {
     /**
      * @var \Faker\Generator
      */
     protected $faker;
 
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
         $this->faker = Factory::create();
